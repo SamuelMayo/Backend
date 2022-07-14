@@ -19,11 +19,11 @@ const environment= async()=>{
 
     let id= 2
     
-    let userById =await userService.getById(id)
+    // let userById =await userService.getById(id)
 
-    let deleteId= await userService.deleteById(id);
+    // let deleteId= await userService.deleteById(id);
 
-    let deleteAll= await userService.deleteAll(); 
+    // let deleteAll= await userService.deleteAll(); 
 }
 
 

@@ -1,0 +1,72 @@
+[
+	{
+		"product": "Carro",
+		"model": "corolla",
+		"id": 1
+	},
+	{
+		"product": "camion",
+		"model": "silverado",
+		"id": 2
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 3
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 4
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 5
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 6
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 7
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 8
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 9
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 10
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 11
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 12
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 13
+	},
+	{
+		"product": "camion",
+		"model": "F-350",
+		"id": 14
+	}
+]
