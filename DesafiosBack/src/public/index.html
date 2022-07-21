@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hola</h1>
+    <h2>Para Agregar un producto</h2>
+    <form id="productForm">
+        <label><br>product<br></label>
+        <input name="product"required>
+        <label><br>model<br></label>
+        <input name="model"required>
+        <input type="submit">
+    </form>
+
+    <h2>Para Buscar un producto especifico:</h2>
+
+    <form action="http://localhost:8080/api/products/id" method="get">
+        <label><br>Buscar producto con id :</label>
+        <input type = "number" name="id"required>
+        <br><button>Buscar id</button>
+    </form>
+
+    <h2>Para eliminar un producto especifico</h2>
+
+    <form id="deleteForm">
+        <label><br>Borrar por id:</label>
+        <input type = "number" name="delete"required><br>
+        <input type="submit">
+    </form>
+
+    <h2>Para actualizar un producto</h2>
+
+    <form id="updateForm">
+        <label><br>Id del producto que quieres actualizar<br></label>
+        <input type = "number" name="id"required>
+        <label><br>product<br></label>
+        <input name="product"required>
+        <label><br>model<br></label>
+        <input name="model"required>
+        <input type="submit">
+    </form>
+
+
+    
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
