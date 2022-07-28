@@ -13,13 +13,11 @@ router.get('/',async (req,res)=>{
 })
 
 
-router.get('/:id', async(req,res)=>{
-    let allProducts=  await products.getAll()
-    if(req.query.id>allProducts.length){
-        return res.send('404 ID no encontrado o inexcistente')
-    }
+router.get('/buscar', async(req,res)=>{
+    
     let id= req.query.id;
     let result= await products.getById(id)
+    console.log(result);
     res.send(result)
 })
 
@@ -37,8 +35,9 @@ router.put('/', async(req,res)=>{
 })
 
 router.delete('/', async(req,res)=>{
-    let id = req.body
-    await products.deleteById(id.delete)
+    let id = req.body.delete
+    console.log(id);
+    await products.deleteById(id)
     res.send('Prodcuto eliminado exitosamente')
 })
 

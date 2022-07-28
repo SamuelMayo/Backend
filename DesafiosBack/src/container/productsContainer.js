@@ -1,6 +1,7 @@
 import fs from 'fs'
 
-const path= './files/products.json'
+const path1= './src/files/products.json'
+
 
 class productsContainer{
     save =async(product)=>{
@@ -9,11 +10,11 @@ class productsContainer{
             if(products.length===0){
                 product.id=1;
                 products.push(product);
-                await fs.promises.writeFile(path, JSON.stringify(products, null, '\t'))
+                await fs.promises.writeFile(path1, JSON.stringify(products, null, '\t'))
             }else{
                 product.id= products[products.length-1].id+1;
                 products.push(product);
-                await fs.promises.writeFile(path, JSON.stringify(products, null, '\t'))
+                await fs.promises.writeFile(path1, JSON.stringify(products, null, '\t'))
             }
             console.log(products);
         }catch(err){
@@ -26,11 +27,11 @@ class productsContainer{
         try{
             let products = await this.getAll();
             const findproduct = products.find(product=> product.id==id)
-            if(typeof findproduct=== 'object' ){
+            console.log(findproduct);
+            if(findproduct){
                 return findproduct
-                
             }else{
-                return console.log('No existe un productoio con ese id')
+                return {error:'No existe un productoio con ese id'}
             }
         }catch(err){
             console.log(`No se pudo encontrar al productoio ${err}`);
@@ -39,8 +40,8 @@ class productsContainer{
 
     getAll= async()=>{
         try{
-            if(fs.existsSync(path)){
-                let fileData= await fs.promises.readFile(path,'utf-8')
+            if(fs.existsSync(path1)){
+                let fileData= await fs.promises.readFile(path1,'utf-8')
                 let products= JSON.parse(fileData);
                 return products;
             }else{
@@ -61,7 +62,7 @@ class productsContainer{
                     return null
                 }
             })
-                const newArray = fs.promises.writeFile(path, JSON.stringify(eliminate, null, '\t'))
+                const newArray = fs.promises.writeFile(path1, JSON.stringify(eliminate, null, '\t'))
                 console.log("deletByID: productoio Eliminado correctamente");
                 return newArray
         }catch(err){
@@ -71,7 +72,7 @@ class productsContainer{
 
     deleteAll= async()=>{
         try{
-            await fs.promises.writeFile(path, [])
+            await fs.promises.writeFile(path1, [])
         }catch(err){
             console.log(`Error al eliminar los archivos ${err}`);
         }
@@ -80,17 +81,16 @@ class productsContainer{
     toUpdate = async(product) =>{
         let arr = await this.getAll()
         let id = product.id;
-        let titulo = product.title;
-        let price = product.prices;
-        let thumbnail = product.thumbnail;
-        arr.map(function(dato){
+        let producto = product.product;
+        let modelo= product.model;
+        arr.for(function(dato){
             if(dato.id == id){
-                dato.title = titulo;
-                dato.prices = price;
-                dato.thumbnail = thumbnail;
+                dato.product = producto;
+                dato.model = modelo;
+                
             }
         })
-        await fs.promises.writeFile(path,JSON.stringify(arr,null,'\t'));
+        await fs.promises.writeFile(path1,JSON.stringify(arr,null,'\t'));
         return arr;
     }
 }

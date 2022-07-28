@@ -35,7 +35,7 @@ const deleteSubmit = (evt,form,route) =>{
     }).then(res =>res.json()).then(json=>console.log(json));
 }
 
-deleteForm.addEventListener('submit',(e)=>deleteSubmit(e,e.target,'/api/products'))
+deleteForm.addEventListener('submit',(e)=>deleteSubmit(e,e.target,'/api/products/'))
 
 
 let actualizarForm = document.getElementById('updateForm')
@@ -53,4 +53,4 @@ const actualizarSubmit = (evt,form,route) =>{
     }).then(res =>res.json()).then(json=>console.log(json));
 }
 
-actualizarForm.addEventListener('submit',(e)=>actualizarSubmit(e,e.target,'/api/products'))
+actualizarForm.addEventListener('submit',(e)=>actualizarSubmit(e,e.target,'/api/products/'))
